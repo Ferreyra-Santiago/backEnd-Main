@@ -17,7 +17,7 @@ let cocaCola = {
   stock: 5,
   }
   
-  let Mouse = {
+  let mouse = {
   title: "Logitech",
   description: "Mouse Inalambrico 16000 Dpi",
   price: 1000,
@@ -89,14 +89,14 @@ const productManager = new ProductManager("products.json");
 // console.log(productManager.readFile());
 productManager.addProduct(cocaCola);
 // productManager.addProduct(teclado);
-productManager.addProduct(Mouse);
+// productManager.addProduct(mouse);
 // productManager.getProductById(2);
 // productManager.updateProduct(1,{
 //   title: "Redragon",
 //   description: "Mouse Inalambrico 16000 Dpi",
 //   price: 1000,
 //   thumbnail: "Sin Imagen",
-//   code: "Mouse123",
+//   code: "5",
 //   stock: 8,
 // })
 // productManager.deleteProduct(1)
