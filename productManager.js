@@ -123,7 +123,3 @@ const productManager = new ProductManager("products.json");
 module.exports ={
   productManager
 }
-
-console.log(`Bienvenido
-Ver todos los productos: http://localhost:3000/products  y para limitar agregar ?limit=(Numero que desea)
-y para filtrar http://localhost:3000/products/(Numero de id del producto)`)
