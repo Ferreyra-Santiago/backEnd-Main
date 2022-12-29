@@ -1,5 +1,8 @@
 const fs = require("fs");
 
+
+
+
 let cocaCola = {
   title: "Coca Cola",
   description: "Bebida",
@@ -102,7 +105,7 @@ const productManager = new ProductManager("products.json");
 
 // console.log(productManager.readFile());
 // productManager.addProduct(cocaCola);
-productManager.addProduct(teclado);
+// productManager.addProduct(teclado);
 // productManager.addProduct(mouse);
 // productManager.getProductById(2);
 // productManager.updateProduct(1,{
@@ -115,3 +118,12 @@ productManager.addProduct(teclado);
 // })
 // productManager.deleteProduct(1);
 // productManager.deleteAll()
+
+
+module.exports ={
+  productManager
+}
+
+console.log(`Bienvenido
+Ver todos los productos: http://localhost:3000/products  y para limitar agregar ?limit=(Numero que desea)
+y para filtrar http://localhost:3000/products/(Numero de id del producto)`)
