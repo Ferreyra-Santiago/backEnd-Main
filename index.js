@@ -41,7 +41,7 @@ class ProductManager {
 
   writeData(data) {
     let dataString = JSON.stringify(data);
-    fs.writeFileSync(`./${this.path}`, dataString);
+    fs.writeFileSync(`./${this.path}`, dataString, );
     return dataString;
   }
 
@@ -49,6 +49,15 @@ class ProductManager {
     let items = this.readFile();
     if (items.find((e) => e.code === item.code)) {
       console.log("a CODE has already been assigned");
+    } else if (
+      !!!item.title ||
+      !!!item.description ||
+      !!!item.price ||
+      !!!item.thumbnail ||
+      !!!item.code ||
+      !!!item.stock
+    ) {
+      console.log("Todos los campos son obligatorios");
     } else {
       item.id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
       items.push(item);
@@ -76,9 +85,14 @@ class ProductManager {
   }
   deleteProduct(id) {
     let products = this.readFile();
-    if(product = products.filter((e) => e.id != id)){
-    this.writeData(product);}
-    console.log("ID not found")
+    let productDelete = products.filter((e) => e.id != id)
+    if(productDelete.length < products.length){
+    this.writeData(productDelete);
+    console.log("Se ha Eliminado con exito el producto")
+  }
+    else{
+      console.log("ID not found")
+    }
   }
   deleteAll() {
     this.writeData([]);
@@ -87,8 +101,8 @@ class ProductManager {
 const productManager = new ProductManager("products.json");
 
 // console.log(productManager.readFile());
-productManager.addProduct(cocaCola);
-// productManager.addProduct(teclado);
+// productManager.addProduct(cocaCola);
+productManager.addProduct(teclado);
 // productManager.addProduct(mouse);
 // productManager.getProductById(2);
 // productManager.updateProduct(1,{
@@ -99,5 +113,5 @@ productManager.addProduct(cocaCola);
 //   code: "5",
 //   stock: 8,
 // })
-// productManager.deleteProduct(1)
+// productManager.deleteProduct(1);
 // productManager.deleteAll()
