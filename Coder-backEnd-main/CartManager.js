@@ -52,17 +52,15 @@ class CartManager {
     let cartId=this.carts.find((cart) => cart.id === cid)
     let products = Object.values(cartId)
     let quantity = products[2]
-    let productsInTheCart = products[0]
-
+   
     if (!cartId) {
       console.log("ID Cart not found")
     }
     else if(cartId){ 
-      console.log("hola")
       console.log(quantity)
       let productUpdate = this.carts.filter((cart) => cart.id !== cid);
       let cartNew = {
-        products: [{product, quantity }],
+        products: [{product,  quantity }],
         id: cid,
         quantityTotal: quantity = quantity + 1
       };

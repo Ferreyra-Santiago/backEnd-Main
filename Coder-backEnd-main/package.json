@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/braiancarignano/Coder-backEnd.git"
+    "url": "git+https://github.com/Ferreyra-Santiago/backEnd-Main.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/braiancarignano/Coder-backEnd/issues"
+    "url": "https://github.com/Ferreyra-Santiago/backEnd-Main.git"
   },
-  "homepage": "https://github.com/braiancarignano/Coder-backEnd#readme",
+  "homepage": "https://github.com/Ferreyra-Santiago/backEnd-Main.git",
   "dependencies": {
     "express": "^4.18.2"
   },
