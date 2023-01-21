@@ -67,18 +67,27 @@ class CartManager {
     else if (searchProduct){
       let productsSave = productInCart.filter((e) => e.product != pid);
       let newQuantity =  searchProduct.quantity + 1
-      console.log(typeof(searchProduct.quantity))
-
-      
-      let cartUpdate = {
-        id: cart.id,
-        products: [productsSave[0], { product: productSelect, quantity: newQuantity }],
-      };
-      
-      let cartsSave = dataCarts.filter((e) => e.id != cid);
-      let cartsNew = [];
-      cartsNew.push(...cartsSave, cartUpdate);
-      this.writeData(cartsNew);
+      if (productsSave.length){
+        let cartUpdate = {
+          id: cart.id,
+          products: [...productsSave,{ product: productSelect, quantity: newQuantity }],
+        };
+        console.log(cartUpdate)
+        let cartsSave = dataCarts.filter((e) => e.id != cid);
+        let cartsNew = [];
+        cartsNew.push(...cartsSave, cartUpdate);
+        this.writeData(cartsNew);  
+      }
+      else {
+        let cartUpdate = {
+          id: cart.id,
+          products: [{ product: productSelect, quantity: newQuantity }],
+        };
+        let cartsSave = dataCarts.filter((e) => e.id != cid);
+        let cartsNew = [];
+        cartsNew.push(...cartsSave, cartUpdate);
+        this.writeData(cartsNew);
+      }
       
     }
     else{
@@ -106,6 +115,7 @@ class CartManager {
 }
 
 const cartManager = new CartManager("./database/carts.json");
+// cartManager.addProductCart(2,2)
 
 module.exports = {
   cartManager: cartManager,
