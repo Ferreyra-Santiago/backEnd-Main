@@ -20,13 +20,13 @@
         "id": 2
     },
     {
-        "title": "teclado",
-        "description": "logitech",
-        "price": 400,
-        "thumbnail": "Sin Imagen",
-        "code": "1daasd",
-        "stock": 35,
+        "title": "lapiz",
+        "description": "nose",
+        "price": "500",
+        "thumbnail": "asdfasdf",
+        "code": "321465asd",
         "status": true,
+        "stock": "3",
         "id": 3
     }
 ]
