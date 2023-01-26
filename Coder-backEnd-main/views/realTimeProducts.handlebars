@@ -65,26 +65,12 @@
       name="idDelete"
     />
     </br>
-    <button type="submit" >Eliminar</button>
+    <button type="submit" id="botonGP">Eliminar</button>
   </form>
 </div>
 
-<div>
 <h2>Los productos disponibles en Tiempo Real</h2>
-        {{#each Producto}}
-    <ul>
-        <li><h3>Nombre: {{this.title}}</h3></li>
-        <li>Description: {{this.description}}</li>
-        <li>Precio: {{this.price}}</li>
-        <li>Imagenes: {{this.humbnail}}</li>
-        <li>Codigo: {{this.code}}</li>
-        <li>Stock: {{this.stock}}</li>
-        <li>Status: {{this.Status}}</li>
-        <li>Id: {{this.id}}</li>
-    </ul>
-         {{/each}}
-         </br>
-</div>
+<div id="productsRealTime">
 </div>
 
 
